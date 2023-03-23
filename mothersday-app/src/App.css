@@ -1,0 +1,41 @@
+:root {
+	position: relative;
+	width: auto;
+	height: auto;
+	/*principales*/
+	--background-theme-first: #fbe68f;
+	--background-theme-first-yellow: #fbe68f;
+	--background-theme-first-red: #FBCADD;
+	--background-theme-first-blue: #C4BEF4;
+	/*secundarios*/
+	--background-theme-second: #FFF8DD;
+	--background-theme-second-yellow: #FFF8DD;
+	--background-theme-second-red: #ffe9f2;
+	--background-theme-second-blue: #eeedff;
+}
+
+body {
+	padding: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: var(--background-theme-first);
+	color: black;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+[data-theme='yellow']{
+	--background-theme-first: var(--background-theme-first-yellow);
+	--background-theme-second: var(--background-theme-second-yellow);
+}
+
+[data-theme='red']{
+	--background-theme-first: var(--background-theme-first-red);
+	--background-theme-second: var(--background-theme-second-red);
+}
+
+[data-theme='blue']{
+	--background-theme-first: var(--background-theme-first-blue);
+	--background-theme-second: var(--background-theme-second-blue);
+}

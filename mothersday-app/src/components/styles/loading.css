@@ -1,0 +1,26 @@
+.card-loading {
+    margin: 0 auto;
+    width: 80%;
+    padding-bottom: 25px;
+    box-sizing: border-box;
+    border: 5px solid #000;
+    border-radius: 10px;
+    background-color: var(--background-theme-second);
+}
+.loading-themes{
+    display: flex; 
+    justify-content: right;
+    padding: 15px;
+}
+.container-loading{
+    margin: 0 auto;
+    padding-right: 25px;
+    width: 75%;
+    background-color: transparent;
+}
+.container-loading img{
+    padding-bottom: 35px;
+    position: relative;
+    width: 60%;
+    top: auto;
+}
