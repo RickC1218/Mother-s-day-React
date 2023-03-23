@@ -1,4 +1,5 @@
 /*import video from '../assets/video.mp4';*/
+import React from 'react';
 import { BsFacebook, BsTwitter, BsLinkedin, BsLink45Deg, BsFillPlayFill } from 'react-icons/bs';
 import './styles/video.css';
 import { Themes } from './Themes';

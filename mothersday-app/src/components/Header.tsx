@@ -1,5 +1,6 @@
 import logo from '../Logo-project.png';
 import './styles/header.css';
+import React from 'react';
 
 export const Header = () => {
     return (

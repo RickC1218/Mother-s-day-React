@@ -8,6 +8,8 @@ import img1 from '../assets/image1.jpg';
 import img2 from '../assets/image2.jpg';
 import img3 from '../assets/image3.jpg';
 
+import { useNavigate } from 'react-router-dom';
+import React from "react";
 
 interface FormData {
     nickname: string;
@@ -21,11 +23,14 @@ export const Form = () => {
 
     const [user, setUser] = useState<FormData>();
 
+    const navigate = useNavigate();
+
     const login = ( nickname: string) => {
         setUser({
             nickname: nickname
         });
     }
+    navigate('/loading/${nickname}', {state: {nickname:user}} );
 
     const sendUser = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

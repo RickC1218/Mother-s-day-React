@@ -24,3 +24,8 @@
     width: 60%;
     top: auto;
 }
+.container-loading h2{
+    margin: auto;
+    text-align: center;
+    padding: auto;
+}
