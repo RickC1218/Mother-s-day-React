@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from "react";
 
-interface props { children: JSX.Element | JSX.Element[] }
+interface Userprops { children: JSX.Element | JSX.Element[] }
 
 export type UserContextProps = {
     user: string;
@@ -13,7 +13,7 @@ const userContext = createContext<UserContextProps>({} as UserContextProps);
 export const useUserContext = () => useContext(userContext);
 
 
-export function UserProvider({children}:props) {
+export function UserProvider({children}:Userprops) {
 
     const [user, setUser] = useState('mamá');
 

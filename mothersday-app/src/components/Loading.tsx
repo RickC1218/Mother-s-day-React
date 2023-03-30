@@ -16,7 +16,7 @@ type Props = {
 
 export const Loading = () => {
 
-    const {user, login} = useUserContext();
+    const {user} = useUserContext();
 
     const navigate = useNavigate();
 

@@ -28,7 +28,7 @@ export const Form = () => {
 
     const sendUser = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(nick);
+        console.log(user);
         navigate('/loading');
     }
 

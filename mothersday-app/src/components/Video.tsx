@@ -1,12 +1,11 @@
-/*import video from '../assets/video.mp4';*/
 import React from 'react';
 import { BsFacebook, BsTwitter, BsLinkedin, BsLink45Deg, BsFillPlayFill } from 'react-icons/bs';
 import { useUserContext } from './Providers/UserProvider';
 import './styles/video.css';
 import { Themes } from './Themes';
 
-export const Video = () => {
-    const {user, login} = useUserContext();
+export const Video:React.FC = () => {
+    const {user} = useUserContext();
 
     return (
         <div className="card-video">
