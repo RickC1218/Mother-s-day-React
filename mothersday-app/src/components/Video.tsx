@@ -1,15 +1,18 @@
 /*import video from '../assets/video.mp4';*/
 import React from 'react';
 import { BsFacebook, BsTwitter, BsLinkedin, BsLink45Deg, BsFillPlayFill } from 'react-icons/bs';
+import { useUserContext } from './Providers/UserProvider';
 import './styles/video.css';
 import { Themes } from './Themes';
 
 export const Video = () => {
+    const {user, login} = useUserContext();
+
     return (
         <div className="card-video">
             <div className="container-video row">
                 <div className="col-4 info">
-                    <h2>Tu video está listo</h2>
+                    <h2>Tu video está listo {user}</h2>
                     <br />
                     <h4>Descargue el video</h4>
                     <button type="submit" name="download" className="download">

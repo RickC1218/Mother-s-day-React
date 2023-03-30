@@ -1,22 +1,17 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { BsFillDiamondFill } from "react-icons/bs";
 import './styles/themes.css';
 
-type Theme = 'yellow' | 'red' | 'blue';
+import React, { useEffect } from "react";
+import { BsFillDiamondFill } from "react-icons/bs";
+import { useThemeContext } from "./Providers/ThemeProvider";
 
 export const Themes = () => {
-    const [theme, setTheme] = useState<Theme>('yellow')    
+    const {theme, changeTheme} = useThemeContext();
 
     useEffect(() => {
         document.body.setAttribute('data-theme', theme);
     }, [theme]);
 
-    const changeTheme = (theme: Theme) => {
-        setTheme(theme);
-    }
-
-    return (
+    return (        
         <div className="container-themes">
             <button type="button" name="options" className="theme-y" onClick={() => changeTheme('yellow')}>
                 <h2>

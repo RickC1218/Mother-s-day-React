@@ -1,40 +1,35 @@
-import { TiChevronRightOutline } from "react-icons/ti";
 import './styles/form.css';
+
+import React from 'react';
+
+import { TiChevronRightOutline } from "react-icons/ti";
 import { Themes } from "./Themes";
 import { useForm } from "./Hooks/useForm";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useUserContext } from "./Providers/UserProvider";
 
 import img1 from '../assets/image1.jpg';
 import img2 from '../assets/image2.jpg';
 import img3 from '../assets/image3.jpg';
 
-import { useNavigate } from 'react-router-dom';
-import React from "react";
-
 interface FormData {
-    nickname: string;
+    nick: string;
 }
 
 export const Form = () => {
-    
-    const {nickname, handleChange} = useForm<FormData>({
-        nickname: '',
-    });
 
-    const [user, setUser] = useState<FormData>();
+    const {user, login} = useUserContext();
+
+    const {nick, handleChange} = useForm<FormData>({
+        nick: '',
+    });
 
     const navigate = useNavigate();
 
-    const login = ( nickname: string) => {
-        setUser({
-            nickname: nickname
-        });
-    }
-    navigate('/loading/${nickname}', {state: {nickname:user}} );
-
     const sendUser = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(user);
+        console.log(nick);
+        navigate('/loading');
     }
 
     return (
@@ -47,15 +42,15 @@ export const Form = () => {
                     onSubmit={sendUser}>
                     <input type="text" 
                         className="form-control" 
-                        name="nickname"
-                        value={nickname}
+                        name="nick"
+                        value={nick}
                         placeholder="Tu nombre"
                         onChange={handleChange}
                     />
                     <button 
                         type="submit" 
                         className="px-5" 
-                        onClick={() => login(nickname)}
+                        onClick={() => login(nick)}
                         >
                         <h2>
                             <TiChevronRightOutline/>
@@ -74,5 +69,5 @@ export const Form = () => {
                 <Themes />
             </div>
         </div>
-    )
+    );
 }
