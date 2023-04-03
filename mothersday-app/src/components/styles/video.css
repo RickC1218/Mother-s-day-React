@@ -8,11 +8,11 @@
     background-color: var(--background-theme-second);
 }
 .video-themes{
-    display: flex; 
-    margin-top: 70px;
+    display: flex;
+    padding-top: 2%;
     padding-right: 25px;
-    padding-bottom: 5px;
-    justify-content: left;
+    padding-bottom: 4%;
+    justify-content: center;
 }
 .container-video{
     margin: 0px;
@@ -78,11 +78,18 @@
     margin: auto;
     text-align: center;
 }
-.play{
+.player{
+    border-radius: 15px;
+    border: 4px solid var(--background-theme-first);
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.playControler{
     border: none;
     background-color: transparent;
 }
-.play svg{
+.playControler svg{
     width: 100%;
     height: 100%;
     font-weight: 800;
@@ -90,6 +97,13 @@
     line-height: 150px;
     fill: var(--background-theme-first);
 }
-.play:hover{
+.player .playControler{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.playControler:hover svg{
     transform: scale(1.25);
 }

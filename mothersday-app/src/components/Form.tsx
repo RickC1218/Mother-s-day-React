@@ -34,7 +34,7 @@ export const Form = () => {
 
     return (
         <div className="card">
-            <h2>Tu año codificando en resumen:</h2>
+            <h2><i>Un día especial ha llegado!</i></h2>
             <h3>Ingresa tu nombre para empezar</h3>
             <div className="container">
                 <form autoComplete="off" 
