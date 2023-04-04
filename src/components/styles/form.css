@@ -79,7 +79,7 @@ h3 {
 .banner {
     margin: 0 auto;
     padding: auto;
-    width: 90%;
+    width: 80%;
     background-color: transparent;
 }
 
@@ -109,10 +109,11 @@ h3 {
 }
 
 .banner section img:hover {
-    width: 35%; /*tamaño de las imagenes del banner*/
+    width: 70%; /*tamaño de las imagenes del banner*/
     padding: 0;
     opacity: 1;
     filter: contrast(125%);
+    transition: 3s all;
     border: #252525 5px solid;
     border-radius: 46px;
 }
