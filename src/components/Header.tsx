@@ -5,8 +5,10 @@ import React from 'react';
 export const Header = () => {
     return (
         <header>
-            <img src={logo} alt="Logo Día de la Madre" />
-            <h1>FELÍZ DÍA, MAMÁ!</h1>
+            <div>
+                <img src={logo} alt="Logo Día de la Madre" />
+                <h1>FELÍZ DÍA, MAMÁ!</h1>
+            </div>
         </header>
     );
 }

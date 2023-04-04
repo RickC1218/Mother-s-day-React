@@ -38,12 +38,12 @@ export const Form = () => {
             <div className="col">
                 <h2><i>Un día especial ha llegado!</i></h2>
                 <h3>Ingresa el nombre de tu mamá para empezar</h3>
-                <div className="container">
+                <div className="container row">
                     <form autoComplete="off"
-                        className="form row align-items-center"
+                        className="form align-items-center"
                         onSubmit={sendUser}>
                         <input type="text"
-                            className="form-control"
+                            className="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-7 col-xxl-7"
                             name="nick"
                             placeholder="Nombre"
                             onChange={handleChange}
@@ -51,7 +51,7 @@ export const Form = () => {
                         <button
                             type="submit"
                             onClick={() => login(nick)}
-                            className='btn-lg btn-sm'
+                            className='col-10 col-sm-9 col-md-7 col-lg-5 col-xl-3 col-xxl-3'
                         >
                             <h4 style={{
                                 marginBottom: '0px',
