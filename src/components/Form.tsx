@@ -18,9 +18,9 @@ interface FormData {
 
 export const Form = () => {
 
-    const {user, login} = useUserContext();
+    const { user, login } = useUserContext();
 
-    const {nick, handleChange} = useForm<FormData>({
+    const { nick, handleChange } = useForm<FormData>({
         nick: 'mamá',
     });
 
@@ -30,45 +30,52 @@ export const Form = () => {
         e.preventDefault();
         console.log(user);
         <Link to={`/loading/${user}`} />
-        navigate(`/loading/${user}`,{state: {user: user}});
+        navigate(`/loading/${user}`, { state: { user: user } });
     }
 
     return (
-        <div className="card">
-            <h2><i>Un día especial ha llegado!</i></h2>
-            <h3>Ingresa el nombre de tu mamá para empezar</h3>
-            <div className="container">
-                <form autoComplete="off" 
-                    className="form row align-items-center"
-                    onSubmit={sendUser}>
-                    <input type="text" 
-                        className="form-control" 
-                        name="nick"
-                        placeholder="Nombre"
-                        onChange={handleChange}
-                    />
-                    <button 
-                        type="submit"                         
-                        onClick={() => login(nick)}
+        <div className="card row">
+            <div className="col">
+                <h2><i>Un día especial ha llegado!</i></h2>
+                <h3>Ingresa el nombre de tu mamá para empezar</h3>
+                <div className="container">
+                    <form autoComplete="off"
+                        className="form row align-items-center"
+                        onSubmit={sendUser}>
+                        <input type="text"
+                            className="form-control"
+                            name="nick"
+                            placeholder="Nombre"
+                            onChange={handleChange}
+                        />
+                        <button
+                            type="submit"
+                            onClick={() => login(nick)}
+                            className='btn-lg btn-sm'
                         >
-                        <h4 style={{
-                            marginBottom: '0px',
-                        }}>
-                            <i><b>Siguiente   </b></i>
-                            <TiChevronRightOutline />
-                        </h4>
-                    </button>
-                </form>
-            </div>
-            <div className="banner">
-                <section>
-                    <img src={img1} alt="imagen 1" />
-                    <img src={img2} alt="imagen 2" />
-                    <img src={img3} alt="imagen 3" />
-                </section>
-            </div>
-            <div className="form-themes">
-                <Themes />
+                            <h4 style={{
+                                marginBottom: '0px',
+                            }}>
+                                <i><b className='badge text-wrap text-break'
+                                    style={{
+                                        color: 'black',
+                                    }}
+                                >Siguiente</b></i>
+                                <TiChevronRightOutline />
+                            </h4>
+                        </button>
+                    </form>
+                </div>
+                <div className="banner">
+                    <section>
+                        <img src={img1} alt="imagen 1" />
+                        <img src={img2} alt="imagen 2" />
+                        <img src={img3} alt="imagen 3" />
+                    </section>
+                </div>
+                <div className="form-themes col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <Themes />
+                </div>
             </div>
         </div>
     );

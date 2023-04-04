@@ -33,7 +33,7 @@ h3 {
 }
 
 .container .form {
-    margin: 25px;
+    margin: 10px 5%;
     padding: 0;
     background-color: transparent;
 }
@@ -44,15 +44,15 @@ h3 {
     font-size: 21px;
     line-height: 40px;
     border: 3px solid #000000;
-    width: 70%;
+    width: 65%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
 
 .container .form button {
     margin: 0 auto;
-    width: 30%;
-    padding: 0;
+    width: 28%;
+    padding: 10px 0px;
     border: 3px solid #000000;
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -109,8 +109,7 @@ h3 {
 }
 
 .banner section img:hover {
-    cursor: pointer;
-    width: 27%;
+    width: 35%; /*tamaño de las imagenes del banner*/
     padding: 0;
     opacity: 1;
     filter: contrast(125%);

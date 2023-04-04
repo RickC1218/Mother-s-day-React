@@ -13,7 +13,7 @@ export const Loading = () => {
     const navigate = useNavigate();
 
     const location = useLocation();
-    var arrayLocation = location.pathname.split('/')
+    let arrayLocation = location.pathname.split('/')
     if(arrayLocation.length == 2){
         arrayLocation[2] = 'mamá';
         arrayLocation[2] = arrayLocation[2].replace(/%C3%A1/g, "á");
@@ -43,22 +43,25 @@ export const Loading = () => {
         const timer = setTimeout(() => {
             <Link to={`/video/${user}`} />
             navigate(`/video/${user}`,{state: {user: user}});
-        }, 5000);
+        }, 3000);
         return () => {
             clearInterval(timer);
         }
     }, []);
 
     return (
-        <div className="card-loading">
-            <div className="loading-themes">
-                <Themes />
+        <div className="card-loading row">
+            <div className="col">
+                <div className="loading-themes col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
+                    <Themes />
+                </div>
+                <div className='container-loading col-12'>
+                    <h2>Cargando...</h2>
+                    <br />
+                    <img src={gif} alt="loading..." />
+                    <h4><i>Alistando el video para {user}</i></h4>
+                </div>
             </div>
-            <div className="container-loading">
-                <h2>Cargando...</h2>
-                <img src={gif} alt="loading..." />
-                <h4><i>Alistando el video para {user}</i></h4>
-            </div>
-        </div>
+        </div>    
     );
 }

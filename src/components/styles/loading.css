@@ -9,13 +9,12 @@
 }
 .loading-themes{
     display: flex; 
-    justify-content: right;
+    justify-content: center;
     padding: 15px;
 }
 .container-loading{
     margin: 0 auto;
-    padding-right: 25px;
-    width: 75%;
+    width: 100%;
     background-color: transparent;
 }
 .container-loading img{
@@ -27,5 +26,5 @@
 .container-loading h2{
     margin: auto;
     text-align: center;
-    padding: auto;
+    padding: 0px;
 }

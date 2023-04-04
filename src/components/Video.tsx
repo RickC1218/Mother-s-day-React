@@ -18,14 +18,14 @@ import { Themes } from './Themes';
 import { View } from '../remotion/view/View';
 import { useLocation } from 'react-router-dom';
 
-export const Video:React.FC = () => {
-    const {user, login} = useUserContext();
+export const Video: React.FC = () => {
+    const { user, login } = useUserContext();
 
     const playerRef = useRef<PlayerRef>(null);
-    
+
     const location = useLocation();
-    var arrayLocation = location.pathname.split('/')
-    if(arrayLocation.length == 2){
+    let arrayLocation = location.pathname.split('/')
+    if (arrayLocation.length == 2) {
         arrayLocation[2] = 'mamá';
         arrayLocation[2] = arrayLocation[2].replace(/%C3%A1/g, "á");
     } else {
@@ -43,7 +43,7 @@ export const Video:React.FC = () => {
         arrayLocation[2] = arrayLocation[2].replace(/%C3%91/g, "Ñ");
         arrayLocation[2] = arrayLocation[2].replace(/%C3%B1/g, "ñ");
 
-        if(arrayLocation[2] == '' || arrayLocation[2] == null){
+        if (arrayLocation[2] == '' || arrayLocation[2] == null) {
             arrayLocation[2] = 'mamá';
         }
     }
@@ -61,15 +61,15 @@ export const Video:React.FC = () => {
     return (
         <div className="card-video">
             <div className="container-video row">
-                <div className="col-4 info">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4 info">
                     <div className="video-themes">
                         <Themes />
                     </div>
                     <br />
-                    <br />
                     <h2><i>El video para {user} está listo!</i></h2>
                     <br />
                     <h4>Compártelo en redes sociales:</h4>
+                    <br />
                     <div className="container-share">
                         <FacebookShareButton
                             url={window.location.href}
@@ -107,18 +107,6 @@ export const Video:React.FC = () => {
                             </button>
                         </LinkedinShareButton>
 
-                        <PinterestShareButton
-                            url={window.location.href}
-                            media="https://i.ibb.co/0nZ3Z3T/Logo.png"
-                            description="¡Feliz día de las madres!"
-                        >
-                            <button type="button" name="social" className="pinterest">
-                                <h2>
-                                    <BsPinterest />
-                                </h2>
-                            </button>
-                        </PinterestShareButton>
-
                         <TelegramShareButton
                             url={window.location.href}
                             title="¡Feliz día de las madres!"
@@ -143,30 +131,21 @@ export const Video:React.FC = () => {
 
                         <br />
                     </div>
-                    <div className="container-code">
-                        <h5><i>Código fuente: </i></h5>
-                        <a href="https://github.com/RickC1218/Mother-s-day-React">
-                            <button type="button" name="code" className="github">
-                                <h2>
-                                    <BsGithub />
-                                </h2>
-                            </button>
-                        </a>
-                    </div>
                 </div>
-                <div className='col-8 mp4'>
+                <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7 mp4'>
                     <div className='player'>
                         <Player
                             className='playerVideo'
-                            component={ View }
+                            component={View}
                             fps={30}
                             durationInFrames={482}
                             compositionWidth={1080}
-                            compositionHeight={1080}                            ref={playerRef}
+                            compositionHeight={1080} ref={playerRef}
+                            controls
                             loop
-                            style={{ 
+                            style={{
                                 border: '3px solid #000',
-                                borderRadius: '10px' ,
+                                borderRadius: '10px',
                                 width: '90%',
                                 justifyContent: 'center',
                                 margin: '0 auto',
@@ -184,6 +163,16 @@ export const Video:React.FC = () => {
                             </h4>
                         </button>
                     </div>
+                </div>
+                <div className="container-code col-6 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2">
+                    <h5><i>Código fuente: </i></h5>
+                    <a href="https://github.com/RickC1218/Mother-s-day-React">
+                        <button type="button" name="code" className="github">
+                            <h2>
+                                <BsGithub />
+                            </h2>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
