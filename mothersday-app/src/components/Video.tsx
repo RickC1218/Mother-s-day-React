@@ -1,5 +1,14 @@
 import React, { useCallback, useRef } from 'react';
-import { BsFacebook, BsTwitter, BsLinkedin, BsLink45Deg, BsFillPlayFill } from 'react-icons/bs';
+import { BsFacebook, BsTwitter, BsLinkedin, BsLink45Deg, BsPlayCircleFill, BsPinterest, BsTelegram, BsWhatsapp } from 'react-icons/bs';
+import {
+    FacebookShareButton,
+    TwitterShareButton,
+    PinterestShareButton,
+    LinkedinShareButton,
+    WhatsappShareButton,
+    TelegramShareButton,
+} from "react-share";
+
 import { useUserContext } from './Providers/UserProvider';
 
 import './styles/video.css';
@@ -7,11 +16,38 @@ import './styles/video.css';
 import { Player, PlayerRef } from '@remotion/player';
 import { Themes } from './Themes';
 import { View } from '../remotion/view/View';
+import { useLocation } from 'react-router-dom';
 
 export const Video:React.FC = () => {
-    const {user} = useUserContext();
+    const {user, login} = useUserContext();
 
     const playerRef = useRef<PlayerRef>(null);
+    
+    const location = useLocation();
+    var arrayLocation = location.pathname.split('/')
+    if(arrayLocation.length == 2){
+        arrayLocation[2] = 'mamá';
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%A1/g, "á");
+    } else {
+        arrayLocation[2] = arrayLocation[2].replace(/%20/g, " ");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%A1/g, "á");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%A9/g, "é");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%AD/g, "í");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%B3/g, "ó");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%BA/g, "ú");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%81/g, "Á");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%89/g, "É");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%8D/g, "Í");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%93/g, "Ó");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%9A/g, "Ú");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%91/g, "Ñ");
+        arrayLocation[2] = arrayLocation[2].replace(/%C3%B1/g, "ñ");
+
+        if(arrayLocation[2] == '' || arrayLocation[2] == null){
+            arrayLocation[2] = 'mamá';
+        }
+    }
+    login(arrayLocation[2]);
 
     const handleClick = useCallback(() => {
         const { current } = playerRef;
@@ -29,36 +65,83 @@ export const Video:React.FC = () => {
                     <div className="video-themes">
                         <Themes />
                     </div>
-                    <h2><i>Tu video está listo {user}</i></h2>
-                    <br />
-                    <h4>Descargue el video</h4>
-                    <button type="submit" name="download" className="download">
-                        <h4>DESCARGAR</h4>
-                    </button>
                     <br />
                     <br />
-                    <h4>Comparte el video:</h4>
+                    <h2><i>El video para {user} está listo!</i></h2>
+                    <br />
+                    <h4>Compártelo en redes sociales:</h4>
                     <div className="container-share">
-                        <button type="button" name="social" className="facebook">
-                            <h2>
-                                <BsFacebook />
-                            </h2>
-                        </button>
-                        <button type="button" name="social" className="twitter">
-                            <h2>
-                                <BsTwitter />
-                            </h2>
-                        </button>
-                        <button type="button" name="social" className="linkedin">
-                            <h2>
-                                <BsLinkedin />
-                            </h2>
-                        </button>
-                        <button type="button" name="social" className="link">
-                            <h2>
-                                <BsLink45Deg />
-                            </h2>
-                        </button>
+                        <FacebookShareButton
+                            url={window.location.href}
+                            quote="¡Feliz día de las madres!"
+                            hashtag="#FelizDíaDeLasMadres"
+                        >
+                            <button type="button" name="social" className="facebook">
+                                <h2>
+                                    <BsFacebook />
+                                </h2>
+                            </button>
+                        </FacebookShareButton>
+
+                        <TwitterShareButton
+                            url={window.location.href}
+                            title="¡Feliz día de las madres!"
+                            hashtags={["FelizDíaDeLasMadres"]}
+                        >
+                            <button type="button" name="social" className="twitter">
+                                <h2>
+                                    <BsTwitter />
+                                </h2>
+                            </button>
+                        </TwitterShareButton>
+
+                        <LinkedinShareButton
+                            url={window.location.href}
+                            title="¡Feliz día de las madres!"
+                            summary="¡Feliz día de las madres!"
+                        >
+                            <button type="button" name="social" className="linkedin">
+                                <h2>
+                                    <BsLinkedin />
+                                </h2>
+                            </button>
+                        </LinkedinShareButton>
+
+                        <PinterestShareButton
+                            url={window.location.href}
+                            media="https://i.ibb.co/0nZ3Z3T/Logo.png"
+                            description="¡Feliz día de las madres!"
+                        >
+                            <button type="button" name="social" className="pinterest">
+                                <h2>
+                                    <BsPinterest />
+                                </h2>
+                            </button>
+                        </PinterestShareButton>
+
+                        <TelegramShareButton
+                            url={window.location.href}
+                            title="¡Feliz día de las madres!"
+                        >
+                            <button type="button" name="social" className="telegram">
+                                <h2>
+                                    <BsTelegram />
+                                </h2>
+                            </button>
+                        </TelegramShareButton>
+
+                        <WhatsappShareButton
+                            url={window.location.href}
+                            title="¡Feliz día de las madres!"
+                        >
+                            <button type="button" name="social" className="whatsapp">
+                                <h2>
+                                    <BsWhatsapp />
+                                </h2>
+                            </button>
+                        </WhatsappShareButton>
+
+
                     </div>
                 </div>
                 <div className='col-8 mp4'>
@@ -82,9 +165,13 @@ export const Video:React.FC = () => {
                             }}
                         />
                         <button type="button" name="play" className="playControler" onClick={handleClick} >
-                            <h2>
-                                <BsFillPlayFill />
-                            </h2>
+                            <h4 style={{
+                                marginBottom: '0px',
+                                padding: '10px',
+                            }}>
+                                <BsPlayCircleFill />
+                                <i><b>Reproducir</b></i>
+                            </h4>
                         </button>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import React from 'react';
 import { TiChevronRightOutline } from "react-icons/ti";
 import { Themes } from "./Themes";
 import { useForm } from "./Hooks/useForm";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserContext } from "./Providers/UserProvider";
 
 import img1 from '../assets/image1.jpg';
@@ -21,7 +21,7 @@ export const Form = () => {
     const {user, login} = useUserContext();
 
     const {nick, handleChange} = useForm<FormData>({
-        nick: '',
+        nick: 'mamá',
     });
 
     const navigate = useNavigate();
@@ -29,13 +29,14 @@ export const Form = () => {
     const sendUser = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(user);
-        navigate('/loading');
+        <Link to={`/loading/${user}`} />
+        navigate(`/loading/${user}`,{state: {user: user}});
     }
 
     return (
         <div className="card">
             <h2><i>Un día especial ha llegado!</i></h2>
-            <h3>Ingresa tu nombre para empezar</h3>
+            <h3>Ingresa el nombre de tu mamá para empezar</h3>
             <div className="container">
                 <form autoComplete="off" 
                     className="form row align-items-center"
@@ -43,18 +44,19 @@ export const Form = () => {
                     <input type="text" 
                         className="form-control" 
                         name="nick"
-                        value={nick}
-                        placeholder="Tu nombre"
+                        placeholder="Nombre"
                         onChange={handleChange}
                     />
                     <button 
-                        type="submit" 
-                        className="px-5" 
+                        type="submit"                         
                         onClick={() => login(nick)}
                         >
-                        <h2>
-                            <TiChevronRightOutline/>
-                        </h2>
+                        <h4 style={{
+                            marginBottom: '0px',
+                        }}>
+                            <i><b>Siguiente   </b></i>
+                            <TiChevronRightOutline />
+                        </h4>
                     </button>
                 </form>
             </div>

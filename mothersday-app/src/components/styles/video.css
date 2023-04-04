@@ -47,7 +47,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    padding: 3px;
+    padding: 15px;
     margin: 0;
 }
 .container-share button:hover{
@@ -56,17 +56,32 @@
 .facebook svg{
     width: 100%;
     height: 100%;
-    fill: #1877f2;
+    fill: #0087CB;
 }
 .twitter svg{
     width: 100%;
     height: 100%;
-    fill: #1DA1F2;
+    fill: #0DDCFB;
 }
 .linkedin svg{
     width: 100%;
     height: 100%;
-    fill: #0073b1;
+    fill: #0074B2;
+}
+.pinterest svg{
+    width: 100%;
+    height: 100%;
+    fill: #BD081C;
+}
+.telegram svg{
+    width: 100%;
+    height: 100%;
+    fill: #0087CB;
+}
+.whatsapp svg{
+    width: 100%;
+    height: 100%;
+    fill: #009D00;
 }
 .link svg{
     width: 100%;
@@ -87,7 +102,9 @@
 }
 .playControler{
     border: none;
+    border-radius: 100%;
     background-color: transparent;
+    width: 150px;
 }
 .playControler svg{
     width: 100%;
@@ -104,6 +121,9 @@
     transform: translate(-50%, -50%);
     z-index: 1;
 }
+.player .playControler i{
+    padding-top: 15px;
+}
 .playControler:hover svg{
-    transform: scale(1.25);
+    transform: scale(1.1);
 }

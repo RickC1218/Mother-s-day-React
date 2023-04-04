@@ -13,6 +13,7 @@ export const Themes = () => {
 
     return (        
         <div className="container-themes">
+            <h5><i>Elige un tema:</i></h5>
             <button type="button" name="options" className="theme-y" onClick={() => changeTheme('yellow')}>
                 <h2>
                     <BsFillDiamondFill/>

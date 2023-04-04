@@ -3,15 +3,15 @@
 	width: auto;
 	height: auto;
 	/*principales*/
-	--background-theme-first: #fbe68f;
-	--background-theme-first-yellow: #fbe68f;
-	--background-theme-first-red: #FBCADD;
-	--background-theme-first-blue: #C4BEF4;
+	--background-theme-first: #f9e37f;
+	--background-theme-first-yellow: #f9e37f;
+	--background-theme-first-red: #fda6c8;
+	--background-theme-first-blue: #74c8d9;
 	/*secundarios*/
-	--background-theme-second: #FFF8DD;
-	--background-theme-second-yellow: #FFF8DD;
-	--background-theme-second-red: #ffe9f2;
-	--background-theme-second-blue: #eae9fe;
+	--background-theme-second: #fefcc5;
+	--background-theme-second-yellow: #fefcc5;
+	--background-theme-second-red: #fddeeb;
+	--background-theme-second-blue: #def8fc;
 }
 
 body {
