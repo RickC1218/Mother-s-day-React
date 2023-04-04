@@ -1,0 +1,51 @@
+name: Deploy React app
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches: [ main ]
+  #pull_request:
+  #  branches: [ main ]
+
+jobs:
+  build:
+    name: Build and deploy phase
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    env:      
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+      - name: Clone repository
+        id: clone-repository
+        uses: actions/checkout@main
+      - name: Install libraries
+        id: install-libraries
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command  
+      - name: Build project
+        id: build-project
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build # will run `yarn build` command                
+        env:
+          CI: ''
+          NODE_OPTIONS: '--max-old-space-size=8192'
+      # Share artifact inside workflow
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: mom-day
+          directory: build          
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - uses: act10ns/slack@v1
+        with: 
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#eventos'
+        if: always()
