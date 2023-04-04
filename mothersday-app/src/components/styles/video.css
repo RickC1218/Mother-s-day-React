@@ -83,10 +83,36 @@
     height: 100%;
     fill: #009D00;
 }
-.link svg{
+.container-code {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid var(--background-theme-first);
+    margin: 80% 15% 0% 15%;
+    padding: 0px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.container-code button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 3px;
+    size: auto;
+    margin: 0;
+}
+.container-code button:hover{
+    transform: scale(1.15);
+}
+.github svg{
     width: 100%;
     height: 100%;
-    fill: #000;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 50px;
+    fill: #303030;
 }
 .container-video .mp4{
     padding: auto;

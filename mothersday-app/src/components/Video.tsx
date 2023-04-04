@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from 'react';
-import { BsFacebook, BsTwitter, BsLinkedin, BsLink45Deg, BsPlayCircleFill, BsPinterest, BsTelegram, BsWhatsapp } from 'react-icons/bs';
+import { BsFacebook, BsTwitter, BsLinkedin, BsLink45Deg, BsPlayCircleFill, BsPinterest, BsTelegram, BsWhatsapp, BsGithub } from 'react-icons/bs';
 import {
     FacebookShareButton,
     TwitterShareButton,
@@ -141,7 +141,17 @@ export const Video:React.FC = () => {
                             </button>
                         </WhatsappShareButton>
 
-
+                        <br />
+                    </div>
+                    <div className="container-code">
+                        <h5><i>Código fuente: </i></h5>
+                        <a href="https://github.com/RickC1218/Mother-s-day-React">
+                            <button type="button" name="code" className="github">
+                                <h2>
+                                    <BsGithub />
+                                </h2>
+                            </button>
+                        </a>
                     </div>
                 </div>
                 <div className='col-8 mp4'>
