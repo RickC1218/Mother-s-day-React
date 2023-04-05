@@ -39,7 +39,7 @@ npm start
 
 2. The second screen shows an "Loading" box to prepare the necessary elements to create the final video view.
 
-3. Finally the custom video is displayed where you are allowed to play the video, share it on social media. ***Note:*** **On all screens you can change the theme!**
+3. Finally the custom video is displayed where you are allowed to play the video, share it on social media. ***Note:*** **On two screens you can change the theme!**
 ![image](https://user-images.githubusercontent.com/95365813/229987704-a3676ddf-cf31-4ef5-a761-8f788bca58c9.png)
 
 ## Demo

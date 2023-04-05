@@ -52,9 +52,6 @@ export const Loading = () => {
     return (
         <div className="card-loading row">
             <div className="col">
-                <div className="loading-themes col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3">
-                    <Themes />
-                </div>
                 <div className='container-loading col-12'>
                     <h2>Cargando...</h2>
                     <br />
