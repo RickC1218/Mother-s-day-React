@@ -9,6 +9,10 @@ import {
     TelegramShareButton,
 } from "react-share";
 
+import img1 from '../assets/image1.jpg';
+import img2 from '../assets/image2.jpg';
+import img3 from '../assets/image3.jpg';
+
 import { useUserContext } from './Providers/UserProvider';
 
 import './styles/video.css';
@@ -131,6 +135,15 @@ export const Video: React.FC = () => {
 
                         <br />
                     </div>
+                    <br />
+                    <div className="banner-video">
+                        <section>
+                            <img src={img1} alt="imagen 1" />
+                            <img src={img2} alt="imagen 2" />
+                            <img src={img3} alt="imagen 3" />
+                        </section>
+                    </div>
+                    <br />
                 </div>
                 <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 col-xxl-7 mp4'>
                     <div className='player'>

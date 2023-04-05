@@ -92,6 +92,49 @@
     height: 100%;
     fill: #009D00;
 }
+/*banner*/
+.banner-video {
+    margin: 0 auto;
+    padding: auto;
+    width:80%;
+    background-color: transparent;
+}
+
+.banner-video section {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+}
+
+.banner-video section img {
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: 0.5s ease;
+    position: relative;
+    padding: 0;
+    width: 25%;
+    top: auto;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+    border: 3px solid #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+}
+
+.banner-video section img:hover {
+    width: 70%; /*tamaño de las imagenes del banner*/
+    padding: 0;
+    opacity: 1;
+    filter: contrast(125%);
+    transition: 3s all;
+    border: #252525 5px solid;
+    border-radius: 30px;
+}
+
 .container-code {
     background-color: transparent;
     display: flex;
