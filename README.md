@@ -8,6 +8,8 @@ This project consists of creating an application for creating personalized video
 
 
 ---
+> ***Note:*** **You'll need to have Node.js and npm (Node Package Manager) installed on your computer.**
+
 ### Clone the repository
 
 Run the following command
